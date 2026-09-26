@@ -1,4 +1,9 @@
-function EmployeeItem({ secilenkisi }) {
+function EmployeeItem({ employee , onEditClick}) {
+
+    function handleEditClick(){
+        onEditClick(employee)
+    }
+
 return (
 <tr>
     <td>
@@ -7,14 +12,14 @@ return (
             <label htmlFor="checkbox1"></label>
         </span>
     </td>
-    <td>{secilenkisi.name}</td>
-    <td>{secilenkisi.email}</td>
-    <td>{secilenkisi.address}</td>
-    <td>{secilenkisi.phone}</td>
-    <td>{secilenkisi.gender}</td>
-    <td>{secilenkisi.department}</td>
+    <td>{employee.name}</td>
+    <td>{employee.email}</td>
+    <td>{employee.address}</td>
+    <td>{employee.phone}</td>
+    <td>{employee.gender}</td>
+    <td>{employee.department}</td>
     <td>
-        <a href="#editEmployeeModal" className="edit" data-toggle="modal"><i className="material-icons"
+        <a onClick= {handleEditClick} href="#editEmployeeModal" className="edit" data-toggle="modal"><i className="material-icons"
                 data-toggle="tooltip" title="Edit">&#xE254;</i></a>
         <a href="#deleteEmployeeModal" className="delete" data-toggle="modal"><i className="material-icons"
                 data-toggle="tooltip" title="Delete">&#xE872;</i></a>

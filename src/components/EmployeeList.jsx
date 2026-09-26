@@ -1,6 +1,6 @@
 import EmployeeItem from "./EmployeeItem";
 
-function EmployeeList({ calisanlist }) {
+function EmployeeList({ List , onEditClick}) {
 
     return (
         <table className="table table-striped table-hover">
@@ -24,8 +24,11 @@ function EmployeeList({ calisanlist }) {
             </thead>
             <tbody>
                 {
-                    calisanlist.map(kisi =>
-                        (<EmployeeItem key={kisi.id} secilenkisi={kisi} />))
+                    List.map(emp =>
+                        (<EmployeeItem key={emp.id} 
+                        employee={emp} 
+                        onEditClick={onEditClick}
+                        />))
                 }
 
             </tbody>
